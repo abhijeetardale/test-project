@@ -33,9 +33,9 @@ object SundayCalc extends App {
 			if(month<13) {
 				val firstDayOfNextMonth = month match {
 					case _ if month30.contains(month) => getNextMonthDay(firstDayOfCurrentMonth, 30)
-					case _ if month31.contains(month) => getNextMonthDay(firstDayOfCurrentMonth, 30)
+					case _ if month31.contains(month) => getNextMonthDay(firstDayOfCurrentMonth, 31)
 					case _ if isLeapYear(year) => getNextMonthDay(firstDayOfCurrentMonth, 29)
-					case _ => getNextMonthDay(firstDayOfCurrentMonth, 30)
+					case _ => getNextMonthDay(firstDayOfCurrentMonth, 28)
 				}
 				if (firstDayOfNextMonth == 7) {
 					checkMonths(total + 1, firstDayOfNextMonth, month + 1)
